@@ -1,0 +1,16 @@
+.assigned{
+    background-color: #fff;
+    
+}
+.pending{
+    background-color: #dada49;
+}
+.running{
+    background-color: #ccf391;
+}
+.complete{
+    background-color: #8aea8a;
+}
+.incomplete{
+    background-color: #ffdada;
+}

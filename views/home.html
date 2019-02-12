@@ -1,0 +1,74 @@
+<div class="jumbotron text-center">
+    <h2><b><i class="fa fa-list text-success" aria-hidden="true"></i> <span class="text-success">TASK</span> <i>Manager</i></b></h2>
+    <p>Keep your work up to date.</p>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Add New Task
+                </div>
+                <div class="card-body">
+                    <form class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label>Task Title : </label>
+                                <input type="hidden" ng-model="task.id">
+                                <input type="text" class="form-control" ng-model="task.title">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Task Status : </label>
+                                <select class="form-control" ng-model="task.status">
+                                    <option value="assigned">Assigned</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="running">Running</option>
+                                    <option value="complete">Complete</option>
+                                    <option value="incomplete">Incomplete</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Task Description : </label>
+                                <textarea class="form-control" ng-model="task.description"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col text-right">
+                                <button class="btn btn-danger btn-sm" ng-click="reset()"><i class="fa fa-eraser" aria-hidden="true"></i> Clear</button>
+                                <button ng-show="addBtn" class="btn btn-primary btn-sm" ng-click="addUpdateTask(task)"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Task</button>
+                                <button ng-show="!addBtn" class="btn btn-success btn-sm" ng-click="addUpdateTask(task)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Task</button>
+                            </div>
+                        </div>
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8" ng-init="getTasks()">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 " ng-repeat="task in tasks">
+                    <div class="card" >
+                        <div class="card-header">
+                            {{ task.title }}
+                        </div>
+                        <div class="card-body">
+                            <div><small>{{ task.status | capitalize}}</small></div>
+                            <p>{{ task.description }}</p>
+                            
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-success btn-sm" ng-click="action(task,'complete')"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+                                
+                            <button class="btn btn-primary btn-sm" ng-click="editTask(task)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                            
+                            <button class="btn btn-danger btn-sm" ng-click="action(task,'delete')"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
