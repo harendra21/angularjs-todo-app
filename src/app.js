@@ -1,7 +1,7 @@
 var app = angular.module('myApp',['ngRoute']);
 
 app.constant('BASEURL', 
-    'http://localhost/projects/ngTodo/api/'                                                  
+    'http://localhost/projects/ngTodo/apis/'                                                  
 );
 
 app.config(function($routeProvider) {
