@@ -1,6 +1,6 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
-app.constant("BASEURL", "http://localhost/work/angularjs-todo-app/");
+app.constant("BASEURL", "https://serene-plateau-17761.herokuapp.com/");
 
 app.config(function ($routeProvider) {
   $routeProvider
