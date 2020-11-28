@@ -10,6 +10,7 @@ $db['default'] = array(
 	// 'username' => 'root',
 	// 'password' => '',
 	// 'database' => 'ngTodo',
+	// Request : Please dont't distroy this remote database this is used only for educational purpose, PLEASE 
 	'hostname' => 'remotemysql.com',
 	'username' => 'foPEhmeeY3',
 	'password' => 'ZEeoyPyU5m',
