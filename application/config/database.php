@@ -1,20 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'ngTodo',
-	// Request : Please dont't distroy this remote database this is used only for educational purpose, PLEASE 
-	'hostname' => 'remotemysql.com',
-	'username' => 'foPEhmeeY3',
-	'password' => 'ZEeoyPyU5m',
-	'database' => 'foPEhmeeY3',
+	'hostname' => DB_HOST,
+	'username' => DB_USER,
+	'password' => DB_PASSWORD,
+	'database' => DB_NAME,
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

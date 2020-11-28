@@ -16,6 +16,9 @@
     <div ng-view></div>
     <script src="./public/node_modules/angular/angular.min.js"></script>
     <script src="./public/node_modules/angular-route/angular-route.min.js"></script>
+    <script>
+        var base_url = '<?php echo base_url(); ?>';
+    </script>
     <script src="./public/src/app.js"></script>
 </body>
 
