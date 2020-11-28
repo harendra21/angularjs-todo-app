@@ -5,6 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TaskCtrl extends CI_Controller {
 
+    public function index(){
+        $this->load->view('home');
+    }
+
     public function add_update_task()
     {
         $json = file_get_contents('php://input');

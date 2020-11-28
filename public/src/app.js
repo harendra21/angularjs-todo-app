@@ -1,11 +1,11 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
-app.constant("BASEURL", "http://localhost/work/angularjs-todo-app/bkend/");
+app.constant("BASEURL", "http://localhost/work/angularjs-todo-app/");
 
 app.config(function ($routeProvider) {
   $routeProvider
     .when("/home", {
-      templateUrl: "views/home.html",
+      templateUrl: "public/views/home.html",
       controller: "HomeCtrl",
     })
     .otherwise({
