@@ -1,7 +1,12 @@
 # angularjs-todo-app
+
 This project is todo list project based on AngularJs (1.6.9), Bootstrap (4), Codeigniter (3).
 
-# Demo - http://harendra.online/todo
+## DEMO - https://serene-plateau-17761.herokuapp.com/
+
+## Watch demo video https://youtu.be/havxaaPRUVQ
+
+[![Watch the video](https://i.imgur.com/UbJ6T4I.jpg)](https://youtu.be/havxaaPRUVQ)
 
 # Installation Process :
 
