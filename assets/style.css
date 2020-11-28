@@ -1,16 +1,19 @@
-.assigned{
-    background-color: #fff;
-    
+.assigned {
+  background-color: #fff;
 }
-.pending{
-    background-color: #dada49;
+.pending {
+  background-color: #dada49;
 }
-.running{
-    background-color: #ccf391;
+.running {
+  background-color: #ccf391;
 }
-.complete{
-    background-color: #8aea8a;
+.complete {
+  background-color: #8aea8a;
 }
-.incomplete{
-    background-color: #ffdada;
+.incomplete {
+  background-color: #ffdada;
+}
+.well.text-center.ng-scope {
+  padding: 10px;
+  background: #f3d926;
 }

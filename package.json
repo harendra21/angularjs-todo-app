@@ -11,6 +11,7 @@
   "dependencies": {
     "angular": "^1.6.9",
     "angular-route": "^1.6.9",
+    "animate.css": "^4.1.1",
     "bootstrap": "^4.2.1"
   }
 }

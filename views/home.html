@@ -1,15 +1,24 @@
-<div class="jumbotron text-center">
-    <h2><b><i class="fa fa-list text-success" aria-hidden="true"></i> <span class="text-success">TASK</span> <i>Manager</i></b></h2>
+<div class="well text-center">
+    <h2><b><i class="fa fa-list text-success" aria-hidden="true"></i> <span class="text-success">TASK</span>
+            <i>Manager</i></b></h2>
     <p>Keep your work up to date.</p>
 </div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-12 text-right">
+            <br>
+            <button class="btn btn-primary btn-sm" ng-if="!addTask" ng-click="addTaskClick(true)"><i class="fa fa-plus"
+                    aria-hidden="true">
+                </i> Add New
+                Task</button>
+            <button class="btn btn-danger btn-sm" ng-if="addTask" ng-click="addTaskClick(false)"><i class="fa fa-minus"
+                    aria-hidden="true">
+                </i> Close</button>
+            <br>
+        </div>
+        <div class="col-sm-12 animate__animated animate__backInDown" ng-if="addTask">
             <div class="card">
-                <div class="card-header">
-                    Add New Task
-                </div>
                 <div class="card-body">
                     <form class="form-group">
                         <div class="form-group row">
@@ -37,37 +46,50 @@
                         </div>
                         <div class="row form-group">
                             <div class="col text-right">
-                                <button class="btn btn-danger btn-sm" ng-click="reset()"><i class="fa fa-eraser" aria-hidden="true"></i> Clear</button>
-                                <button ng-show="addBtn" class="btn btn-primary btn-sm" ng-click="addUpdateTask(task)"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Task</button>
-                                <button ng-show="!addBtn" class="btn btn-success btn-sm" ng-click="addUpdateTask(task)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Task</button>
+                                <button class="btn btn-danger btn-sm" ng-click="reset()"><i class="fa fa-eraser"
+                                        aria-hidden="true"></i> Clear</button>
+                                <button ng-show="addBtn" class="btn btn-primary btn-sm"
+                                    ng-click="addUpdateTask(task)"><i class="fa fa-plus-square" aria-hidden="true"></i>
+                                    Add Task</button>
+                                <button ng-show="!addBtn" class="btn btn-success btn-sm"
+                                    ng-click="addUpdateTask(task)"><i class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i> Update Task</button>
                             </div>
                         </div>
-                
+
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8" ng-init="getTasks()">
+        <br><br>
+        <div class="col-sm-12 animate__animated animate__backInDown" ng-init="getTasks()" ng-if="!addTask">
             <div class="row">
-                <div class="col-md-4 col-sm-6 " ng-repeat="task in tasks">
-                    <div class="card" >
-                        <div class="card-header">
-                            {{ task.title }}
-                        </div>
+                <div class="col-sm-12" ng-if="tasks.length > 0" ng-repeat="task in tasks">
+                    <div class="card">
+
                         <div class="card-body">
-                            <div><small>{{ task.status | capitalize}}</small></div>
+
+                            <div class=" pull-right">
+                                <button class="btn btn-success btn-sm" ng-click="action(task,'complete')"><i
+                                        class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+
+                                <button class="btn btn-primary btn-sm" ng-click="editTask(task)"><i
+                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+                                <button class="btn btn-danger btn-sm" ng-click="action(task,'delete')"><i
+                                        class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </div>
+
+                            <b>{{ task.title }}</b>
+                            <small>( {{ task.status | capitalize}} )</small>
                             <p>{{ task.description }}</p>
-                            
-                        </div>
-                        <div class="card-footer text-right">
-                            <button class="btn btn-success btn-sm" ng-click="action(task,'complete')"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
-                                
-                            <button class="btn btn-primary btn-sm" ng-click="editTask(task)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                            
-                            <button class="btn btn-danger btn-sm" ng-click="action(task,'delete')"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         </div>
                     </div>
-                </div>  
+                    <br>
+                </div>
+                <div class="col-sm-12 text-center" ng-if="tasks.length == 0">
+                    <b>No record found</b>
+                </div>
             </div>
         </div>
     </div>
